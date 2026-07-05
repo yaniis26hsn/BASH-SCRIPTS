@@ -1,15 +1,11 @@
+#this script will put the old/heavey log files inside a special folder called logs so that it 
+#gonna clean the folder 
 
-# for file in *; do
-#     if [ -f "$file" ]; then
-#         echo "$file" >> filesOnly 
-#     fi
-# done
+# As you run local apps, build backend servers, or test scripts, log files (*.log , *.err , *.out) and temporary build files pile up and get heavy.
 
-#   while IFS= read -r line ; do 
-#     if [[ "$line" == *.log || "$line" == *.err || "$line" == *.out ]]; then 
-#     echo "$line" >> logFiles 
-#     fi 
-#     done < filesOnly
+# What it does: Looks inside your local log or temp directories and instantly purges any files that are larger than a specific size (e.g., > 50MB) or older than 7 days, keeping a clean history without bloating your drive.
+# if a file with the same name already exists in logs folder , we will use versionin 
+#this script doesn't support files in depth more than 1 (it works for the files inside that exact folder not in sub folders)
 
 
     find . -maxdepth 1 -type f \
